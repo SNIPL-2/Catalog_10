@@ -236,11 +236,11 @@ function renderItemDetail(itemCode, opts = { pushUrl: true }) {
     );
     return `
       <tr>
-        <td data-label="Variant Code">${escapeHtml(variantCode)}</td>
-        <td data-label="Description">${escapeHtml(description)}</td>
-        <td data-label="Price/Unit">${escapeHtml(price)}</td>
-        <td data-label="Unit">${escapeHtml(unit)}</td>
-        <td data-label="MOQ">${escapeHtml(moq)}</td>
+        <td>${escapeHtml(variantCode)}</td>
+        <td>${escapeHtml(description)}</td>
+        <td>${escapeHtml(price)}</td>
+        <td>${escapeHtml(unit)}</td>
+        <td>${escapeHtml(moq)}</td>
         <td class="wa-cell"><a class="wa-link" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP_NUMBER}?text=${msg}"><i class="fab fa-whatsapp"></i> Chat</a></td>
       </tr>`;
   }).join("");
@@ -256,19 +256,21 @@ function renderItemDetail(itemCode, opts = { pushUrl: true }) {
       <p class="specs">${escapeHtml(first["Specs"])}</p>
     </div>
     <h3 class="variants-heading">Available Variants</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Variant Code</th>
-          <th>Description</th>
-          <th>Price/Unit</th>
-          <th>Unit</th>
-          <th>MOQ</th>
-          <th>Enquire</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Variant Code</th>
+            <th>Description</th>
+            <th>Price/Unit</th>
+            <th>Unit</th>
+            <th>MOQ</th>
+            <th>Enquire</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
   `;
 }
 

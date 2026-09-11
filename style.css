@@ -282,7 +282,7 @@ main {
   overflow: hidden;
   background: #EEF1F5;
   margin-bottom: 8px;
-  padding: 10px;
+  padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,7 +294,7 @@ main {
   object-fit: contain;
 }
 
-.category-card .card-image-wrap { aspect-ratio: 4 / 3; padding: 14px; }
+.category-card .card-image-wrap { aspect-ratio: 4 / 3; padding: 4px; }
 
 .card-title {
   font-size: 13.5px;
@@ -349,7 +349,7 @@ main {
   max-width: 260px;
   aspect-ratio: 1 / 1;
   margin-bottom: 12px;
-  padding: 16px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,14 +371,19 @@ main {
   margin: 4px 0 10px;
 }
 
-/* Table on wider screens */
+/* Table stays tabular on all screen sizes; scrolls horizontally on narrow screens */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+}
+
 table {
   width: 100%;
+  min-width: 560px;
   border-collapse: collapse;
   background: var(--surface);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--border);
 }
 
 th, td {
@@ -386,7 +391,10 @@ th, td {
   padding: 10px 12px;
   text-align: left;
   font-size: 13.5px;
+  white-space: nowrap;
 }
+
+td:nth-child(2) { white-space: normal; min-width: 160px; }
 
 th {
   background: #EEF2F7;
@@ -408,33 +416,8 @@ tr:last-child td { border-bottom: none; }
 }
 .wa-link:hover { text-decoration: underline; }
 
-/* Stacked variant cards on narrow screens */
 @media (max-width: 640px) {
-  table, thead, tbody, th, td, tr { display: block; }
-  thead { display: none; }
-  table { border: none; background: none; }
-  tr {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    margin-bottom: 10px;
-    padding: 10px 12px;
-  }
-  td {
-    border: none;
-    padding: 4px 0;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--text-muted);
-    font-size: 12px;
-  }
-  td.wa-cell { justify-content: flex-start; margin-top: 6px; }
-  td.wa-cell::before { content: none; }
+  th, td { padding: 9px 10px; font-size: 12.5px; }
 }
 
 /* ---------- NO RESULTS ---------- */

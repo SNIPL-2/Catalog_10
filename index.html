@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>SNI Catalogue — Sri Neelkanth Impex Pvt. Ltd.</title>
+  <meta name="description" content="Browse the full tools and hardware catalogue from Sri Neelkanth Impex Pvt. Ltd. Search by item code, name or category, view pricing and MOQ, and enquire directly on WhatsApp." />
+  <meta property="og:title" content="SNI Catalogue — Sri Neelkanth Impex Pvt. Ltd." />
+  <meta property="og:description" content="Browse tools and hardware by category, check pricing and MOQ, and enquire on WhatsApp in one tap." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0F2A47" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <a class="skip-link" href="#catalogue">Skip to catalogue</a>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img
+          src="https://lh3.googleusercontent.com/d/1ihtfs-uyhFkmeXFd4V9sd4VKnqKnt2Hk"
+          alt="SNI Logo"
+          class="logo"
+          width="56" height="56"
+        />
+        <div class="brand-text">
+          <h1>Sri Neelkanth Impex</h1>
+          <p class="brand-sub">Tools &amp; Hardware Catalogue</p>
+        </div>
+      </div>
+      <a class="wa-header-btn" href="https://wa.me/917986297302" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i><span>+91 79862 97302</span>
+      </a>
+    </div>
+
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search item code, name or category…"
+          aria-label="Search catalogue"
+          autocomplete="off"
+        />
+        <button class="clear-btn" id="clearBtn" type="button" aria-label="Clear search" hidden>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="breadcrumb" class="breadcrumb" aria-live="polite"></div>
+    <div id="catalogue" class="catalogue" aria-live="polite">
+      <div class="state state-loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Loading catalogue…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Sri Neelkanth Impex Pvt. Ltd. · Powered by Grotech</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
